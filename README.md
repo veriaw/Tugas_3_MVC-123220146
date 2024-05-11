@@ -1,4 +1,4 @@
-# JDBC Crud
+# MVC
 
 Pada pertemuan ke-8 kali ini, kita akan belajar mengenai MVC. MVC (Singkatan dari Model-View-Controller) adalah pola arsitektur untuk membangun aplikasi, dengan memisahkan kode menjadi 3 bagian, yaitu:
 
