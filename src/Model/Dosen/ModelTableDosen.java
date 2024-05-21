@@ -2,42 +2,33 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Model.Mahasiswa;
+package Model.Dosen;
 
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author rafli
+ * @author Lenovo
  */
-public class ModelTable extends AbstractTableModel {
-
-    // Berfungsi untuk menyimpan daftar mahasiswa
-    List<ModelMahasiswa> daftarMahasiswa;
+public class ModelTableDosen extends AbstractTableModel {
+     List<ModelDosen> daftarDosen;
 
     /*
       Nama kolom tabelnya disimpan ke dalam variabel "namaKolom" yang memiliki 
       tipe data Array String.
      */
-    String kolom[] = {"ID", "Nama", "NIM"};
+    String kolom[] = {"ID", "Nama", "NIDN"};
 
-    /*
-      Karena daftarMahasiswa memiliki tipe data List, kita harus mengubahnya
-      terlebih dahulu ke dalam tipe data Array Object supaya dapat 
-      dimasukkan ke dalam table.
-     */
-    public ModelTable(List<ModelMahasiswa> daftarMahasiswa) {
-        this.daftarMahasiswa = daftarMahasiswa;
+    public ModelTableDosen(List<ModelDosen> daftarDosen) {
+        this.daftarDosen = daftarDosen;
     }
 
-    // Method untuk mengambil jumlah baris dari tabel
     @Override
     public int getRowCount() {
-        return daftarMahasiswa.size();
+        return daftarDosen.size();
     }
 
-    // Method untuk mengambil jumlah kolom dari tabel
     @Override
     public int getColumnCount() {
         return kolom.length;
@@ -47,11 +38,11 @@ public class ModelTable extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         switch (columnIndex) {
             case 0:
-                return daftarMahasiswa.get(rowIndex).getId();
+                return daftarDosen.get(rowIndex).getId();
             case 1:
-                return daftarMahasiswa.get(rowIndex).getNama();
+                return daftarDosen.get(rowIndex).getNama();
             case 2:
-                return daftarMahasiswa.get(rowIndex).getNim();
+                return daftarDosen.get(rowIndex).getNidn();
             default:
                 return null;
         }

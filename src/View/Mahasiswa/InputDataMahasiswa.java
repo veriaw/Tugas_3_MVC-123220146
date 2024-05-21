@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class InputData extends JFrame {
+public class InputDataMahasiswa extends JFrame {
     // Membuat sebuah instance bernama controller dari class "ControllerMahasiswa".
     ControllerMahasiswa controller;
     
@@ -17,13 +17,13 @@ public class InputData extends JFrame {
     JButton tombolTambah = new JButton("Tambah Mahasiswa");
     JButton tombolKembali = new JButton("Kembali");
 
-    public InputData() {
+    public InputDataMahasiswa() {
         setTitle("Input Mahasiswa");
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
         setLayout(null);
         setSize(480, 240);
+        
 
         add(header);
         add(labelInputNama);
@@ -51,7 +51,7 @@ public class InputData extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                new ViewData();
+                new ViewDataMahasiswa();
             }
         });
 

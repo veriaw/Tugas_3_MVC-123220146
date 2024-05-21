@@ -7,9 +7,9 @@ import javax.swing.JOptionPane;
 
 public class ControllerMahasiswa {
 
-    ViewData halamanTable;
-    InputData halamanInput;
-    EditData halamanEdit;
+    ViewDataMahasiswa halamanTable;
+    InputDataMahasiswa halamanInput;
+    EditDataMahasiswa halamanEdit;
 
     InterfaceDAOMahasiswa daoMahasiswa;
 
@@ -26,17 +26,17 @@ public class ControllerMahasiswa {
       Karena dalam hal ini, controller mahasiswa akan digunakan pada 3 halaman atau 3 view yang berbeda, 
       yaitu Halaman Table, Halaman Input, dan Halaman Edit.
     */
-    public ControllerMahasiswa(ViewData halamanTable) {
+    public ControllerMahasiswa(ViewDataMahasiswa halamanTable) {
         this.halamanTable = halamanTable;
         this.daoMahasiswa = new DAOMahasiswa();
     }
     
-    public ControllerMahasiswa(InputData halamanInput) {
+    public ControllerMahasiswa(InputDataMahasiswa halamanInput) {
         this.halamanInput = halamanInput;
         this.daoMahasiswa = new DAOMahasiswa();
     }
     
-    public ControllerMahasiswa(EditData halamanEdit) {
+    public ControllerMahasiswa(EditDataMahasiswa halamanEdit) {
         this.halamanEdit = halamanEdit;
         this.daoMahasiswa = new DAOMahasiswa();
     }
@@ -59,7 +59,7 @@ public class ControllerMahasiswa {
           kemudian kita masukkan variabel daftarMahasiswa sebagai parameter constructor
           supaya dapat diubah menjadi sebuah isi table yang dapat dimasukkan ke dalam tabel.
          */
-        ModelTable table = new ModelTable(daftarMahasiswa);
+        ModelTableMahasiswa table = new ModelTableMahasiswa(daftarMahasiswa);
 
         // Mengisi tabel yang berada pada halaman Table Mahasiswa
         halamanTable.getTableMahasiswa().setModel(table);
@@ -97,7 +97,7 @@ public class ControllerMahasiswa {
             
             // Terakhir, program akan pindah ke halaman Table Mahasiswa()
             halamanInput.dispose();
-            new ViewData();
+            new ViewDataMahasiswa();
         } catch (Exception e) {
             // Menampilkan pop-up ketika terjadi error
             JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
@@ -140,7 +140,7 @@ public class ControllerMahasiswa {
 
             // Terakhir, program akan pindah ke halaman Table Mahasiswa()
             halamanEdit.dispose();
-            new ViewData();
+            new ViewDataMahasiswa();
         } catch (Exception e) {
             // Menampilkan pop-up ketika terjadi error
             JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());

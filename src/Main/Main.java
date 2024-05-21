@@ -1,11 +1,11 @@
 package Main;
 
-import View.Mahasiswa.ViewData;
+import View.Mahasiswa.ViewDataMahasiswa;
 
 public class Main {
 
     public static void main(String[] args) {
-        new ViewData();
+        new MainMenu();
     }
     
 }

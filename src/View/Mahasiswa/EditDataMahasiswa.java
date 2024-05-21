@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class EditData extends JFrame {
+public class EditDataMahasiswa extends JFrame {
     // Membuat sebuah instance bernama controller dari class "ControllerMahasiswa".
     ControllerMahasiswa controller;
     
@@ -18,7 +18,7 @@ public class EditData extends JFrame {
     JButton tombolEdit = new JButton("Edit Mahasiswa");
     JButton tombolKembali = new JButton("Kembali");
 
-    public EditData(ModelMahasiswa mahasiswa) {
+    public EditDataMahasiswa(ModelMahasiswa mahasiswa) {
         setTitle("Edit Mahasiswa");
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -56,7 +56,7 @@ public class EditData extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                new ViewData();
+                new ViewDataMahasiswa();
             }
         });
 
